@@ -6,11 +6,13 @@ const initialState: UserState = {
   error: null,
   loading: false,
   isAuth: false,
+  selectedUser: null,
+  users: [],
 };
 
 const UserReducer = (state = initialState, action: UserActions): UserState => {
   switch (action.type) {
-    case UserActionTypes.LOGIN_USER:
+    case UserActionTypes.START_REQUEST:
       return { ...state, loading: true };
     case UserActionTypes.LOGIN_USER_SUCCESS:
       return {
@@ -18,13 +20,32 @@ const UserReducer = (state = initialState, action: UserActions): UserState => {
         user: action.payload.decodedToken,
         loading: false,
         isAuth: true,
-        message: action.payload.message,
+        message: action.payload.Message,
       };
-    case UserActionTypes.LOGIN_USER_ERROR:
+    case UserActionTypes.FINISH_REQUEST:
       return {
         ...state,
         loading: false,
-        message: action.payload.message,
+        message: action.payload,
+      };
+    case UserActionTypes.SELECT_USER:
+      return { ...state, selectedUser: action.payload };
+    case UserActionTypes.LOGOUT_USER:
+      return {
+        user: null,
+        message: null,
+        error: null,
+        loading: false,
+        isAuth: false,
+        selectedUser: null,
+        users: [],
+      };
+    case UserActionTypes.ALL_USERS_LOADED:
+      return {
+        ...state,
+        loading: false,
+        message: action.payload.Message,
+        users: action.payload.Payload,
       };
     default:
       return state;

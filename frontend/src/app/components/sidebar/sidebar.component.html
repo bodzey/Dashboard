@@ -1,0 +1,17 @@
+<p class="font-semibold ">SOCIAL</p>
+<div class="border-2 mx-2 border-black my-2 p-1 flex justify-around">
+	<a href="https://www.facebook.com/">
+		<img class="h-12" src="http://localhost:5000/images/facebook.svg" alt="facebook">
+	</a>
+	<a href="https://www.instagram.com/">
+		<img class="h-12" src="http://localhost:5000/images/instagram.svg" alt="instagram">
+	</a>
+</div>
+<p class="font-semibold ">RECENT POSTS</p>
+<div class="border-2 mx-2 border-black my-2">
+	<img class="w-full h-52 object-cover" [src]="'http://localhost:5000/images/'+posts[0].Image" alt="">
+	<h3 class="font-semibold uppercase my-1 text-xl">{{posts[0].Title}}</h3>
+	<p class="mb-4">
+		{{posts[0].ShortDescription}}
+	</p>
+</div>

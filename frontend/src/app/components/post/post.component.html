@@ -1,0 +1,22 @@
+<article class="post">
+  <div class="post__inner">
+    <div class="post__img">
+      <img [src]="'http://localhost:5000/images/' + post.Image" alt="post" />
+    </div>
+    <div class="post__tittle">
+      <a href="#" class="tittle__link"
+        ><h3 class="tittle__text">
+          {{ post.Title }}
+        </h3>
+      </a>
+    </div>
+    <div class="post__description">
+      <p class="description__text" #p>
+        {{ post.ShortDescription }}
+      </p>
+    </div>
+    <div class="post__btn" (click)="showDescription(post.Description)">
+      <button type="button" #button>Read More</button>
+    </div>
+  </div>
+</article>

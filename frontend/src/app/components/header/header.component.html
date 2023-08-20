@@ -1,0 +1,7 @@
+<header class="bg-blue-300 py-3 mb-4">
+	<h1 class="font-bold text-center text-2xl mb-5"> WELCOME TO OUR BLOG </h1>
+	<div class="flex justify-around mb-5 underline underline-offset-4">
+		<button *ngFor="let category of categories" class="uppercase"
+			(onclick)="showPostsByCategory(category.Name)">{{category.Name}}</button>
+	</div>
+</header>

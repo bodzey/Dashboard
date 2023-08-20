@@ -1,0 +1,18 @@
+<article class="p-4 bg-blue-300 m-4">
+  <img
+    class="w-full h-72 object-cover"
+    [src]="'http://localhost:5000/images/' + post.Image"
+    alt="post image"
+  />
+  <h3 class="font-semibold uppercase my-1 text-xl">{{ post.Title }}</h3>
+  <p class="mb-4" #p>
+    {{ post.ShortDescription }}
+  </p>
+  <button
+    (click)="showDescription(post.Description)"
+    class="border-2 border-blue-500 py-1 px-3"
+    #button
+  >
+    READ MORE
+  </button>
+</article>

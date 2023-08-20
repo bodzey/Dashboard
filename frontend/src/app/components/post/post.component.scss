@@ -1,0 +1,34 @@
+.post {
+	&__img {
+		height: 350px;
+	}
+	&__tittle {
+		margin: 24px 0;
+		h3 {
+			font-weight: 700;
+		}
+	}
+	&__description {
+		margin-bottom: 24px;
+		p {
+			font-size: 16px;
+			text-align: justify;
+		}
+	}
+	&__btn {
+		text-align: right;
+		button {
+			outline: none;
+			padding: 15px 40px;
+			font-family: inherit;
+			border: 1px solid #000;
+			background-color: #fff;
+			text-transform: uppercase;
+			font-size: 18px;
+			cursor: pointer;
+			&:hover {
+				background-color: #cfe9ed;
+			}
+		}
+	}
+}

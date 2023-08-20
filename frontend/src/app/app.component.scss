@@ -1,0 +1,12 @@
+.blog {
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 50px;
+	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+	}
+}
